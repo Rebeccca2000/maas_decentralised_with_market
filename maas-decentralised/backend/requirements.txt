@@ -1,0 +1,7 @@
+# Backend API Server Dependencies
+Flask>=2.3.0
+Flask-CORS>=4.0.0
+requests>=2.31.0
+
+# Include all existing project dependencies
+-r ../requirements.txt

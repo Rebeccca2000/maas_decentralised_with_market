@@ -1,0 +1,188 @@
+================================================================================
+  L2 BLOCKCHAIN SUPPORT - QUICK START GUIDE
+================================================================================
+
+✅ WHAT'S NEW
+- Run simulations on Optimism, Base, or Arbitrum L2 networks
+- Automatic blockchain configuration
+- Support for custom RPC endpoints
+- Zero additional setup required
+
+================================================================================
+  QUICK COMMANDS
+================================================================================
+
+1. RUN ON LOCALHOST (Default - Hardhat)
+   python abm/agents/run_decentralized_model.py --steps 50 --commuters 10 --providers 5
+
+2. RUN ON OPTIMISM SEPOLIA
+   python abm/agents/run_decentralized_model.py --network optimism-sepolia --steps 50
+
+3. RUN ON BASE SEPOLIA
+   python abm/agents/run_decentralized_model.py --network base-sepolia --steps 50
+
+4. RUN ON ARBITRUM SEPOLIA
+   python abm/agents/run_decentralized_model.py --network arbitrum-sepolia --steps 50
+
+5. QUICK TEST (Debug Mode)
+   python abm/agents/run_decentralized_model.py --debug
+
+6. QUICK TEST ON L2
+   python abm/agents/run_decentralized_model.py --network optimism-sepolia --debug
+
+================================================================================
+  COMMAND LINE OPTIONS
+================================================================================
+
+Network Selection:
+  --network {localhost|optimism-sepolia|base-sepolia|arbitrum-sepolia}
+  Default: localhost
+
+Simulation Parameters:
+  --steps <N>              Number of simulation steps (default: 100)
+  --commuters <N>          Number of commuter agents (default: 20)
+  --providers <N>          Number of provider agents (default: 10)
+
+Flags:
+  --debug                  Quick test (5 commuters, 3 providers, 20 steps)
+  --big-test               Medium test (15 commuters, 8 providers, 50 steps)
+  --no-plots               Skip plot generation for faster execution
+
+Custom RPC:
+  --rpc-url <URL>          Custom RPC endpoint
+  --chain-id <ID>          Custom chain ID
+
+================================================================================
+  NETWORK DETAILS
+================================================================================
+
+Localhost (Hardhat)
+  RPC: http://127.0.0.1:8545
+  Chain ID: 31337
+  Block Time: Instant
+  Use: Development & Testing
+
+Optimism Sepolia
+  RPC: https://sepolia.optimism.io
+  Chain ID: 11155420
+  Block Time: ~2 seconds
+  Use: Optimism L2 Testing
+
+Base Sepolia
+  RPC: https://sepolia.base.org
+  Chain ID: 84532
+  Block Time: ~2 seconds
+  Use: Base L2 Testing
+
+Arbitrum Sepolia
+  RPC: https://sepolia-rollup.arbitrum.io:443
+  Chain ID: 421614
+  Block Time: ~0.25 seconds
+  Use: Arbitrum L2 Testing
+
+================================================================================
+  EXAMPLE WORKFLOWS
+================================================================================
+
+DEVELOPMENT WORKFLOW:
+  1. Test locally first
+     python abm/agents/run_decentralized_model.py --debug
+  
+  2. Run full test on localhost
+     python abm/agents/run_decentralized_model.py --steps 100 --commuters 20 --providers 10
+  
+  3. Test on Optimism Sepolia
+     python abm/agents/run_decentralized_model.py --network optimism-sepolia --steps 50
+
+L2 TESTING WORKFLOW:
+  1. Quick test on Optimism
+     python abm/agents/run_decentralized_model.py --network optimism-sepolia --debug
+  
+  2. Full test on Base
+     python abm/agents/run_decentralized_model.py --network base-sepolia --steps 100 --commuters 20 --providers 10
+  
+  3. Performance test on Arbitrum
+     python abm/agents/run_decentralized_model.py --network arbitrum-sepolia --steps 50 --no-plots
+
+CUSTOM RPC WORKFLOW:
+  1. With Alchemy RPC
+     python abm/agents/run_decentralized_model.py \
+       --network optimism-sepolia \
+       --rpc-url https://opt-sepolia.g.alchemy.com/v2/YOUR_API_KEY \
+       --steps 50
+
+================================================================================
+  HOW IT WORKS
+================================================================================
+
+1. You run the script with --network flag
+2. Script automatically configures blockchain_config.json
+3. Simulation connects to selected network
+4. Results are generated on that blockchain
+5. Plots and metrics are saved locally
+
+================================================================================
+  OUTPUT
+================================================================================
+
+Console Output:
+  - Real-time progress updates
+  - Blockchain statistics
+  - Transaction summaries
+  - Advanced metrics
+
+Generated Files:
+  - simulation_plots_TIMESTAMP/performance_dashboard.png
+  - simulation_plots_TIMESTAMP/cost_market_analysis.png
+  - blockchain_config.json (updated with network settings)
+
+================================================================================
+  DOCUMENTATION
+================================================================================
+
+For detailed information, see:
+  - L2_BLOCKCHAIN_GUIDE.md       (Complete reference guide)
+  - L2_SETUP_SUMMARY.md          (Implementation overview)
+  - RUN_L2_EXAMPLES.sh           (Example commands)
+
+================================================================================
+  TROUBLESHOOTING
+================================================================================
+
+RPC Connection Issues:
+  - Verify RPC URL is correct
+  - Check network connectivity
+  - Use --rpc-url to specify custom endpoint
+
+Transaction Failures:
+  - Check blockchain network status
+  - Verify sufficient gas limits
+  - Ensure contracts are deployed
+
+Slow Performance:
+  - Use --no-plots to skip visualization
+  - Reduce --steps or agent counts
+  - Use --debug mode for quick tests
+
+================================================================================
+  NEXT STEPS
+================================================================================
+
+1. Choose a network (localhost, Optimism, Base, or Arbitrum)
+2. Run a quick test with --debug flag
+3. Review the generated plots and metrics
+4. Run full simulations as needed
+5. Check documentation for advanced options
+
+================================================================================
+  SUPPORT
+================================================================================
+
+For issues or questions:
+  1. Check L2_BLOCKCHAIN_GUIDE.md for detailed documentation
+  2. Review example commands in RUN_L2_EXAMPLES.sh
+  3. Verify blockchain connection with --debug flag
+  4. Check blockchain_config.json for correct settings
+
+================================================================================
+
